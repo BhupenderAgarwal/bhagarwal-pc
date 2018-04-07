@@ -1,0 +1,27 @@
+#Fibonacci Series Using Generator Concept
+
+# fill in this function
+def fib():
+    a=0
+    b=1
+    for i in xrange(30):
+        if i==0:
+            yield a
+        elif i==1:
+            yield b
+        else:
+            c=a+b
+            a=b
+            b=c
+            yield c 
+# testing code
+import types
+if type(fib()) == types.GeneratorType:
+    print "Good, The fib function is a generator."
+
+    counter = 0
+    for n in fib():
+        print n
+        counter += 1
+        if counter == 10:
+            break

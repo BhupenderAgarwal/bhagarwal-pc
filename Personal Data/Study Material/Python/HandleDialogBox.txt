@@ -1,0 +1,7 @@
+if(AssertNoError("UtilsCommon.DoesWindowExist", "POWERPNT",1,G_DIALOG_CLASS,"FactSet",-1,WINDOW_WAIT_TIME/2)) {
+            var wMsg = AssertNoError("UtilsCommon.GetWindow",pPPT,G_DIALOG_CLASS,"FactSet",-1,1000); 
+            if (wMsg.Window("Static", "Please note that FactSet's*since you may wish to forward copies of the file to others thereafter.", -1).Exists)
+                wMsg.Window("Button","OK", -1).Click();
+        }
+            else
+                throw "Message saying "FactSet 'Highlight Linked Items' feature modifies border is not handled.";
